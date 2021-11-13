@@ -2,6 +2,8 @@
  1. 파이썬 버전은 3.8 이상으로 사용해주세요
  2. selenium, bs4가 설치되어있지 않다면 requirements.txt를 활용해 설치해주세요
  3. 자신이 사용하는 chrome의 버전을 확인하고 driver폴더를 만들어 그 폴더 안에 chrome driver를 설치해주세요
+  - chrome 버전 확인 방법 : 주소창에 chrome://version/ 입력
+  - [chrome driver 설치 링크 (클릭하면 넘어갑니다!)](https://chromedriver.chromium.org/downloads)
 
 
 ## 실행방법 (.py version)
