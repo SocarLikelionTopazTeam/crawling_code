@@ -12,7 +12,7 @@ def makedirs(path):
        if not os.path.isdir(path): 
            raise
 
-def search_selenium(search_name, search_limit, scroll_limit):
+def search_selenium(search_name, search_limit, scroll_limit=5):
     root = os.path.join(os.getcwd())
     
     driver = webdriver.Chrome(root + '/driver/chromedriver.exe') # 여기에 크롬드라이브 다운로드 받은 경로를 입력한다.
@@ -24,9 +24,8 @@ def search_selenium(search_name, search_limit, scroll_limit):
     # Scroll 제어 파라미터 선언
     SCROLL_PAUSE_TIME = 1
     last_height = driver.execute_script("return document.body.scrollHeight")
-    download_count, scroll_count = 1, 1
-    err_count = 1
-    
+    scroll_count = 1
+
     while True:
         # scroll limit가 넘어가면 scroll 종료
         if scroll_count > scroll_limit:
@@ -73,6 +72,8 @@ def search_selenium(search_name, search_limit, scroll_limit):
         print(search_name+' ---다운로드 완료---')
 
     driver.close()
+
+
 
 if __name__ == "__main__":
     search_name = input("검색하고 싶은 키워드 : ")
