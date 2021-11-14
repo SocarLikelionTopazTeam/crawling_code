@@ -76,12 +76,13 @@ def search_selenium(search_name, search_limit, scroll_limit=5):
 
 
 if __name__ == "__main__":
-    search_name = input("검색하고 싶은 키워드 : ")
+    search_names = list(map(str, input("검색하고 싶은 키워드(한칸씩 띄워서 여러개 입력 가능) : ").split()))
     search_limit = int(input("원하는 이미지 수집 개수 : "))
     try:
         scroll_limit = int(input("스크롤 횟수 (default=5) : "))
     except:
         scroll_limit = 5
     start = time.time()
-    search_selenium(search_name, search_limit, scroll_limit)
+    for search_name in search_names:
+        search_selenium(search_name, search_limit, scroll_limit)
     print("수집 수행시간 : {}초".format(round(time.time() - start, 3)))
